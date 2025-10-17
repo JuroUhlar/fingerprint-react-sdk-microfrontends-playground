@@ -25,7 +25,7 @@ const VisitorPanel = () => {
 
   return (
     <div style={borderStyle}>
-      <h2 style={{ marginTop: 0 }}>Inventory App (App One)</h2>
+      <h2 style={{ marginTop: 0 }}>React SDK One</h2>
       {isLoading && <p>Identifying visitor…</p>}
       {error && <p style={{ color: '#b91c1c' }}>Error: {error.message}</p>}
       {data && (
