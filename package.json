@@ -1,0 +1,42 @@
+{
+  "name": "micro-frontends-fingerprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:host": "webpack serve --config host/webpack.config.js",
+    "start:app-one": "webpack serve --config app-one/webpack.config.js",
+    "start:app-two": "webpack serve --config app-two/webpack.config.js",
+    "build:host": "webpack --config host/webpack.config.js",
+    "build:app-one": "webpack --config app-one/webpack.config.js",
+    "build:app-two": "webpack --config app-two/webpack.config.js",
+    "build:all": "run-p build:app-one build:app-two build:host",
+    "serve:app-one": "node scripts/serve-static.js app-one/dist 3001",
+    "serve:app-two": "node scripts/serve-static.js app-two/dist 3002",
+    "serve:host": "node scripts/serve-static.js host/dist 3000",
+    "start:prod": "run-p serve:app-one serve:app-two serve:host",
+    "dev": "run-p start:app-one start:app-two start:host"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs-pro-react": "^2.7.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "dotenv": "^17.2.3",
+    "html-webpack-plugin": "^5.6.4",
+    "npm-run-all": "^4.1.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
